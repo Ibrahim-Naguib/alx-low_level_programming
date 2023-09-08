@@ -16,12 +16,12 @@ int main(void)
 		while (secondnum <= 9)
 		{
 			thirdnum = secondnum + 1;
-			while (thirdnum <= 'a')
+			while (thirdnum <= 9)
 			{
 				putchar(firstnum + '0');
 				putchar(secondnum + '0');
 				putchar(thirdnum + '0');
-				if (firstnum < 8 || secondnum < 9 || thirdnum < 'a')
+				if (firstnum < 8 || secondnum < 9 || thirdnum < 9)
 				{
 					putchar(',');
 					putchar(' ');
