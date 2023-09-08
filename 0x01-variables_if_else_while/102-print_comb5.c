@@ -20,8 +20,8 @@ int main(void)
 				fourthnum = thirdnum + 1;
 				while (fourthnum <= 9)
 				{
-					putchar(firstnum + '0');
-					putchar(secondnum + '0');
+					putchar(firstnum);
+					putchar(secondnum);
 					putchar(' ');
 					putchar(thirdnum + '0');
 					putchar(fourthnum + '0');
