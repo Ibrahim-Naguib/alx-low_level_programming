@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int hex = 0;
+	int hex = '0';
 
 	while (hex <= 'f')
 	{
