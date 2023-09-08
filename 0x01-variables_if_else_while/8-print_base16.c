@@ -10,7 +10,10 @@ int main(void)
 
 	while (hex <= 'f')
 	{
+		if ((hex >= '0' && hex <= '9') || (hex >= 'a' && hex <= 'f'))
+	{
 		putchar(hex);
+	}
 		hex++;
 	}
 	putchar('\n');
