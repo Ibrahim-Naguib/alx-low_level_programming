@@ -17,20 +17,20 @@ int main(void)
 		{
 			while (thirdnum <= 9)
 			{
-				forthnum = thirdnum + 1;
-				while (forthnum <= 9)
+				fourthnum = thirdnum + 1;
+				while (fourthnum <= 9)
 				{
 					putchar(firstnum + '0');
 					putchar(secondnum + '0');
 					putchar(' ');
 					putchar(thirdnum + '0');
-					putchar(forthnum + '0');
-					if (firstnum < 9 || secondnum < 9 || thirdnum < 9 || forthnum < 9)
+					putchar(fourthnum + '0');
+					if (firstnum < 9 || secondnum < 9 || thirdnum < 9 || fourthnum < 9)
 					{
 						putchar(',');
 						putchar(' ');
 					}
-					forthnum++;
+					fourthnum++;
 				}
 				thirdnum++;
 			}
