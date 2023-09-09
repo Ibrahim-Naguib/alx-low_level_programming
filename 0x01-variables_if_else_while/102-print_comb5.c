@@ -9,7 +9,7 @@ int main(void)
 	int firstnum = 0;
 	int secondnum = 0;
 	int thirdnum = 0;
-	int fourthnum;
+	int fourthnum = 0;
 
 	while (firstnum <= 9)
 	{
@@ -17,7 +17,6 @@ int main(void)
 		{
 			while (thirdnum <= 9)
 			{
-				fourthnum = thirdnum + 1;
 				while (fourthnum <= 9)
 				{
 					putchar(firstnum + '0');
