@@ -6,36 +6,42 @@
  */
 int main(void)
 {
-	int firstnum = 0;
-	int secondnum = 0;
-	int thirdnum = 0;
-	int fourthnum = 0;
+	int num1 = 0;
+	int num2 = 0;
+	int num3 = 0;
+	int num4 = 0;
 
-	while (firstnum <= 9)
+	while (num1 <= 9)
 	{
-		while (secondnum <= 9)
+		while (num2 <= 9)
 		{
-			while (thirdnum <= 9)
+			while (num3 <= 9)
 			{
-				while (fourthnum <= 9)
+				while (num4 <= 9)
 				{
-					putchar(firstnum + '0');
-					putchar(secondnum + '0');
-					putchar(' ');
-					putchar(thirdnum + '0');
-					putchar(fourthnum + '0');
-					if (firstnum < 9 || secondnum < 9 || thirdnum < 9 || fourthnum < 9)
+					if (((num3 + num4) > (num1 + num2) && num3 >= num1) || num1 < num3)
 					{
-						putchar(',');
+						putchar(num1);
+						putchar(num2);
 						putchar(' ');
+						putchar(num3);
+						putchar(num4);
+						if (!(num1 == '7' && num2 == '8' && num3 == '9' && num4 == '9'))
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
-					fourthnum++;
+					num4++;
 				}
-				thirdnum++;
+				num4 = '0';
+				num3++;
 			}
-			secondnum++;
+			num3 = '0';
+			num2++;
 		}
-		firstnum++;
+		num2 = '0';
+		num1++;
 	}
 	putchar('\n');
 	return (0);
