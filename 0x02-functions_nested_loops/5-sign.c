@@ -1,5 +1,4 @@
 #include "main.h"
-#include <ctype.h>
 /**
  * print_sign - prints a sign after checking the number
  *
@@ -36,4 +35,5 @@ int print_sign(int n)
 		_putchar('\n');
 		return (-1);
 	}
+	return (0);
 }
