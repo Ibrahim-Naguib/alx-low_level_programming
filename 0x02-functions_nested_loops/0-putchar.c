@@ -12,7 +12,3 @@ int main(void)
 	_putchar(str);
 	return (0);
 }
-void _putchar(char str[])
-{
-	write(STDOUT_FILENO, str, sizeof((str) - 1));
-}
