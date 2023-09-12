@@ -5,7 +5,7 @@
  *
  * @c: The character to check.
  *
- * Return: 1 if lower, 0 otherwise.
+ * Return: 1 if alpha, 0 otherwise.
  */
 int _isalpha(int c)
 {
