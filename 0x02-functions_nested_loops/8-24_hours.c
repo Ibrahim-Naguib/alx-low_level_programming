@@ -25,7 +25,6 @@ int num1, num2, num3, num4;
 				_putchar(num3);
 				_putchar(num4);
 				}
-				}
 					num4++;
 				}
 				num4 = '0';
