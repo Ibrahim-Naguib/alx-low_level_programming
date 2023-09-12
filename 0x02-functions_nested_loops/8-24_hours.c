@@ -6,7 +6,7 @@
  */
 void jack_bauer(void)
 {
-int num1, num2, num3, num4;
+	int num1, num2, num3, num4;
 
 	num1 = num2 = num3 = num4 = '0';
 	while (num1 <= '2')
@@ -17,14 +17,15 @@ int num1, num2, num3, num4;
 			{
 				while (num4 <= '9')
 				{
-				if (((num3 + num4) > (num1 + num2) && num3 >= num1) || num1 < num3)
-				{
-				_putchar(num1);
-				_putchar(num2);
-				_putchar(':');
-				_putchar(num3);
-				_putchar(num4);
-				}
+					if (((num3 + num4) > (num1 + num2) && num3 >= num1) || num1 < num3)
+					{
+						_putchar(num1);
+						_putchar(num2);
+						_putchar(':');
+						_putchar(num3);
+						_putchar(num4);
+						_putchar('\n');
+					}
 					num4++;
 				}
 				num4 = '0';
@@ -36,7 +37,4 @@ int num1, num2, num3, num4;
 		num2 = '0';
 		num1++;
 	}
-
-	_putchar('\n');
-
 }
