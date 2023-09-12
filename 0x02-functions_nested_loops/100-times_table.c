@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * times_table - prints the 9 times table
+ * print_times_table- prints the n times table
  *
- * Return: last number.
+ * Return: table.
  */
-void times_table(void)
+void print_times_table(int n)
 {
 	int i, j, multi;
 
