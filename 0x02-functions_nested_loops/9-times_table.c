@@ -15,25 +15,25 @@ void times_table(void)
 			multi = i * j;
 			if (j > 0)
 			{
-				putchar(',');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
 			}
 			if (multi < 10)
 			{
-				putchar(' ');
+				_putchar(' ');
 			}
 			if (multi < 10)
 			{
-				putchar('0' + multi);
+				_putchar('0' + multi);
 			}
 			else
 			{
-				putchar('0' + multi / 10);
-				putchar('0' + multi % 10);
+				_putchar('0' + multi / 10);
+				_putchar('0' + multi % 10);
 
 			}
 
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
