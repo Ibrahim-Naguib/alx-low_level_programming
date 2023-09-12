@@ -2,6 +2,8 @@
 /**
  * print_times_table- prints the n times table
  *
+ *@n: number of times
+ *
  * Return: table.
  */
 void print_times_table(int n)
@@ -12,36 +14,29 @@ void print_times_table(int n)
 	{
 		for (i = 0; i <= n; i++)
 		{
-			for (j = 0; j <= n; j++)
+			_putchar(48);
+			for (j = 1; j <= n; j++)
 			{
+				_putchar(',');
+				_putchar(' ');
 				multi = i * j;
-				if (j == 0)
+				if (multi >= 9)
 				{
-					_putchar(multi + '0');
+					_putchar(' ');
 				}
-				else if (multi < 10 && j != 0)
+				else if (multi <= 99)
 				{
-					_putchar(',');
 					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('0' + multi);
-				}
-				else if (multi >= 10 && multi < 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('0' + (multi / 10));
-					_putchar('0' + (multi % 10));
 				}
 				else if (multi >= 100)
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar('0' + (multi / 100));
-					_putchar('0' + (multi / 10));
-					_putchar('0' + (multi % 10));
+					_putchar((multi / 100) + 48);
+					_putchar((multi % 10) % 10 + 48);
+				}
+				else if (multi <= 99 && multi >= 10)
+				{
+					_putchar((multi / 10) + 48);
+					_putchar((multi % 10) + 48);
 				}
 			}
 			_putchar('\n');
