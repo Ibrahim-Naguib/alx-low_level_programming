@@ -17,15 +17,12 @@ void jack_bauer(void)
 			{
 				while (num4 <= '9')
 				{
-					if (((num3 + num4) > (num1 + num2) && num3 >= num1) || num1 < num3)
-					{
-						_putchar(num1);
-						_putchar(num2);
-						_putchar(':');
-						_putchar(num3);
-						_putchar(num4);
-						_putchar('\n');
-					}
+					_putchar(num1);
+					_putchar(num2);
+					_putchar(':');
+					_putchar(num3);
+					_putchar(num4);
+					_putchar('\n');
 					num4++;
 				}
 				num4 = '0';
