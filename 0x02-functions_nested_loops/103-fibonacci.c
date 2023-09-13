@@ -12,6 +12,7 @@ int main(void)
 
 	a = 0;
 	b = 1;
+	result = 0;
 
 	for (i = 0; i < 34; i++)
 	{
