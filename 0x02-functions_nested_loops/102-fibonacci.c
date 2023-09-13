@@ -11,8 +11,6 @@ int main(void)
 
 	a = 0;
 	b = 1;
-
-	printf("%d, ", 0);
 	for (i = 0; i < 50; i++)
 	{
 		sum = a + b;
