@@ -11,7 +11,7 @@
 char *cap_string(char *str)
 {
 	int i = 0;
-	int digit;
+	int digit = 0;
 
 	while (str[i] != '\0')
 	{
