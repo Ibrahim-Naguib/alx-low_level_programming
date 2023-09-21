@@ -22,9 +22,10 @@ char *cap_string(char *str)
 		}
 		for (j = 0; j < 13; j++)
 		{
-			if (str[i - 1] == special[j] || i == 0)
+			if (str[i - 1] == special[j])
 			{
 				str[i] -= 32;
+				break;
 			}
 		}
 		i++;
