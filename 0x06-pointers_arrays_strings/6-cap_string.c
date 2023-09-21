@@ -29,6 +29,7 @@ char *cap_string(char *str)
 				}
 				digit = 0;
 			}
+				digit = 0;
 		}
 		i++;
 	}
