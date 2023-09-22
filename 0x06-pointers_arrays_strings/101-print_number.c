@@ -12,32 +12,17 @@
 
 void print_number(int n)
 {
-	if (n == 0)
-	{
-		_putchar('0');
-	}
-
+	unsigned int n1;
+	n1 = n;
 	if (n < 0)
 	{
-		_putchar('-');
-		n = -n;
+		putchar('-');
+		n1 = -n;
 	}
 
-	int reversed = 0;
-
-	while (n > 0)
+	if (n1 / 10 != 0)
 	{
-		int digit = n % 10;
-
-		reversed = reversed * 10 + digit;
-		n /= 10;
+		print_number(n1 / 10);
 	}
-
-	while (reversed > 0)
-	{
-		int digit = reversed % 10;
-
-		_putchar('0' + digit);
-		reversed /= 10;
-	}
+	putchar((n1 % 10) + '0');
 }
