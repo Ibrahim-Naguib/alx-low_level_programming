@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 
+/**
+ * print_buffer - Prints the content of a buffer in a specified format.
+ *
+ * @b: The buffer to print.
+ * @size: The size (in bytes) of the buffer.
+ */
+
 void print_buffer(char *b, int size)
 {
 	int o, j, i;
