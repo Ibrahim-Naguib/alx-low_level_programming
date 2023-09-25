@@ -11,6 +11,6 @@
 
 void set_string(char **s, char *to)
 {
-	int *pt2 = s;
+	char *pt2 = s;
 	*pt2 = to;
 }
