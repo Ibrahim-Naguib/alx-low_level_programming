@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - Entry point of the program
@@ -20,11 +21,10 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		char c = *argv[i];
-
-		if (c < '0' ||c > '9')
+		if (!isdigit(*argv[i]))
 		{
-			return (printf("Error\n", 1));
+			printf("Error\n");
+			return (1);
 		}
 
 
