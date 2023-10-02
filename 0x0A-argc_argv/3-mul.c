@@ -11,17 +11,15 @@
 
 int main(int argc, char *argv[])
 {
-	int mult;
-
-	if (argc == 1)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return(1);
 	}
-	else
-	{
-		mult = atoi(argv[1]) * atoi(argv[2]);
-		printf("%d\n", mult);
-	}
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[2]);
+	int mult = num1 * num2;
+
+	printf("%d\n", mult);
 	return (0);
 }
