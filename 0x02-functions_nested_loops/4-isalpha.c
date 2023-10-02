@@ -1,20 +1,19 @@
 #include "main.h"
-#include <ctype.h>
+
 /**
- * _isalpha - Checks if c is lowercase
+ * _isalpha - Checks if c is alpha
  *
  * @c: The character to check.
  *
  * Return: 1 if alpha, 0 otherwise.
  */
+
 int _isalpha(int c)
 {
-	if (isalpha(c))
+	if ((c >= 65 && c <= 90) || c >= 97 && c <= 122 )
 	{
 		return (1);
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
+
