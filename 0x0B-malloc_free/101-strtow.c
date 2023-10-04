@@ -2,32 +2,30 @@
 #include <stdlib.h>
 
 /**
- * wordcount - Count the number of words in a string.
- * @str: The input string to count words in.
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
  *
- * This function counts the number of words in the input string @str.
- * Words are considered separated by spaces (' '). Consecutive spaces
- * are not counted as multiple words.
- *
- * Return: The total number of words in the input string.
+ * Return: number of words
  */
-
-int wordcount(char *str)
+int count_word(char *s)
 {
-	int i, count = 0;
+	int flag, c, w;
 
-	for (i = 0; str[i]; i++)
+	flag = 0;
+	w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
 	{
-		if (str[i] == ' ')
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
 		{
-			if (str[i + 1] != ' ' && str[i + 1] != '\0')
-				count++;
+			flag = 1;
+			w++;
 		}
-		else if (str[i] == 0)
-			count++;
 	}
-	count++;
-	return (count);
+
+	return (w);
 }
 
 /**
