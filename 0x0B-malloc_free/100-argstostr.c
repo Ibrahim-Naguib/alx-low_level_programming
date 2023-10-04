@@ -31,8 +31,8 @@ char *argstostr(int ac, char **av)
 		{
 			args[k++] = av[i][j];
 		}
-		if (i != ac - 1)
 			args[k++] = '\n';
+			k++;
 	}
 	args[k] = '\0';
 	return (args);
