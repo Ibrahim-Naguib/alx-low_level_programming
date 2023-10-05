@@ -10,6 +10,7 @@
 void print_number(int n)
 {
 	int num = n;
+	int j;
 
 	if (n < 0)
 	{
@@ -33,7 +34,7 @@ void print_number(int n)
 			i++;
 		}
 
-		for (int j = i - 1; j >= 0; j--)
+		for (j = i - 1; j >= 0; j--)
 		{
 			_putchar(digits[j] + '0');
 		}
