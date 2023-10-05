@@ -13,13 +13,13 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		num = -num;
 	}
 
 	if (num == 0)
 	{
-		putchar('0');
+		_putchar('0');
 	}
 	else
 	{
@@ -35,7 +35,7 @@ void print_number(int n)
 
 		for (int j = i - 1; j >= 0; j--)
 		{
-			putchar(digits[j] + '0');
+			_putchar(digits[j] + '0');
 		}
 	}
 }
