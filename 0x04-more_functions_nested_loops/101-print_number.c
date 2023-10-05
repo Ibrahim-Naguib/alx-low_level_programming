@@ -9,34 +9,15 @@
 
 void print_number(int n)
 {
-	int num = n;
-	int j;
+	unsigned int num = n;
 
 	if (n < 0)
 	{
-		_putchar(45);
+		_putchar('-');
 		num = -num;
 	}
 
-	if (num == 0)
-	{
-		_putchar('0');
-	}
-	else
-	{
-		int digits[10];
-		int i = 0;
-
-		while (num > 0)
-		{
-			digits[i] = num % 10;
-			num /= 10;
-			i++;
-		}
-
-		for (j = i - 1; j >= 0; j--)
-		{
-			_putchar(digits[j] + '0');
-		}
-	}
+	if ((num / 10) > 0)
+		print_number(num / 10);
+	_putchar((num % 10) + 48);
 }
