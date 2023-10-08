@@ -13,7 +13,7 @@
 
 int _atoi(char *s)
 {
-	unsigned int num = 0;
+	unsigned long int num = 0;
 	int sign = 1;
 
 	do {
@@ -21,8 +21,6 @@ int _atoi(char *s)
 			sign *= -1;
 		else if (*s >= '0' && *s <= '9')
 			num = (num * 10) + (*s - '0');
-		else if (num > 0)
-			break;
 	} while (*s++);
 	return (num * sign);
 }
@@ -56,26 +54,6 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-/**
- * _isdigit - Check if a string represents a valid number.
- * @str: The input string to check.
- *
- * Return: 1 if str is a valid number, 0 otherwise.
- */
-
-int _isdigit(char *str)
-{
-	int i;
-
-	if (str == NULL || str[0] == '\0')
-		return (0);
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-	}
-	return (1);
-}
 
 /**
  * print_number - prints an integer.
@@ -84,19 +62,22 @@ int _isdigit(char *str)
  * Return: void
  */
 
-void print_number(unsigned int n)
+void print_number(unsigned long int n)
 {
-	unsigned int num = n;
+	int temp = num;
+	int numDigits = 0, i, digit;
 
-	if (n < 0)
+	while (temp > 0)
 	{
-		_putchar('-');
-		num = -num;
+		temp /= 10;
+		numDigits++;
 	}
-
-	if ((num / 10) > 0)
-		print_number(num / 10);
-	_putchar((num % 10) + 48);
+	for (i = 0; i < numDigits; i++)
+	{
+		digit = num % 10;
+		_putchar('0' + digit);
+		num /= 10;
+	}
 }
 
 /**
@@ -117,17 +98,7 @@ int main(int argc, char *argv[])
 		_puts("Error ");
 		exit(98);
 	}
-	if (!_isdigit(argv[1]) || !_isdigit(argv[2]))
-	{
-		_puts("Error ");
-		exit(98);
-	}
-
-	num1 = _atoi(argv[1]);
-	num2 = _atoi(argv[2]);
-	mul = num1 * num2;
-	print_number(mul);
+	print_number(_atoi(argv[1]) * _atoi(argv[2]));
 	_putchar('\n');
 	return (0);
 }
-
