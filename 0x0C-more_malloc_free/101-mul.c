@@ -62,22 +62,12 @@ int _putchar(char c)
  * Return: void
  */
 
-void print_number(unsigned long int n)
+void print_number(unsigned int num)
 {
-	int temp = num;
-	int numDigits = 0, i, digit;
+	if ((num / 10) > 0)
+		print_number(num / 10);
+	_putchar((num % 10) + 48);
 
-	while (temp > 0)
-	{
-		temp /= 10;
-		numDigits++;
-	}
-	for (i = 0; i < numDigits; i++)
-	{
-		digit = num % 10;
-		_putchar('0' + digit);
-		num /= 10;
-	}
 }
 
 /**
@@ -92,7 +82,6 @@ int main(int argc, char *argv[])
 {
 	unsigned int num1, num2, mul;
 
-	void(argc);
 	if (argc != 3)
 	{
 		_puts("Error ");
