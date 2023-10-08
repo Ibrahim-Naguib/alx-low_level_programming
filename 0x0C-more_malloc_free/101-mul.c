@@ -32,14 +32,9 @@ int is_number(char *str)
 
 int main(int argc, char *argv[])
 {
-	unsigned int num1, num2, mul;
+	int num1, num2, mul;
 
-	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	if (!is_number(argv[1]) || !is_number(argv[2]))
+	if (!is_number(argv[1]) || !is_number(argv[2]) || argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
@@ -48,6 +43,6 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 	mul = num1 * num2;
-	printf("%u\n", mul);
+	printf("%d\n", mul);
 	return (0);
 }
