@@ -1,26 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/**
- * is_number - Check if a string represents a valid number.
- * @str: The input string to check.
- *
- * Return: 1 if str is a valid number, 0 otherwise.
- */
-
-int is_number(char *str)
-{
-	int i;
-
-	if (str == NULL || str[0] == '\0')
-		return (0);
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-	}
-	return (1);
-}
+#include "main.h"
 
 /**
  * main - Multiply two numbers provided as command-line arguments.
@@ -36,18 +16,19 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("Error\n");
+		_puts("Error");
 		exit(98);
 	}
-	if (!is_number(argv[1]) || !is_number(argv[2]))
+	if (!_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
-		printf("Error\n");
+		_puts("Error\n");
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
 	mul = num1 * num2;
-	printf("%u\n", mul);
+	print_number(mul);
+	_putchar('\n');
 	return (0);
 }
