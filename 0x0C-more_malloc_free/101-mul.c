@@ -28,9 +28,10 @@ int _atoi(char *s)
 }
 
 /**
- * main - Entry point
+ * _puts - Prints a string followed by a new line.
+ * @s: string to be printed
  *
- * Return: Always 0 (Success)
+ * Return: void
  */
 
 void _puts(char *s)
@@ -56,7 +57,7 @@ int _putchar(char c)
 }
 
 /**
- * is_number - Check if a string represents a valid number.
+ * _isdigit - Check if a string represents a valid number.
  * @str: The input string to check.
  *
  * Return: 1 if str is a valid number, 0 otherwise.
@@ -110,6 +111,7 @@ int main(int argc, char *argv[])
 {
 	unsigned int num1, num2, mul;
 
+	void(argc);
 	if (argc != 3)
 	{
 		_puts("Error ");
