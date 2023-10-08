@@ -1,70 +1,25 @@
 #include <stdio.h>
-#include "main.h"
-#include <unistd.h>
+#include <stdlib.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * is_number - Check if a string represents a valid number.
+ * @str: The input string to check.
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * _atoi - Converts a string to an integer.
- * @s: The input string.
- *
- * Return: The integer value of the string.
+ * Return: 1 if str is a valid number, 0 otherwise.
  */
 
-int _atoi(char *s)
+int is_number(char *str)
 {
-	unsigned long int num = 0;
-	int sign = 1;
+	int i;
 
-	do {
-		if (*s == '-')
-			sign *= -1;
-		else if (*s >= '0' && *s <= '9')
-			num = (num * 10) + (*s - '0');
-	} while (*s++);
-	return (num * sign);
-}
-
-/**
- * _puts - Prints a string followed by a new line.
- * @s: string to be printed
- *
- * Return: void
- */
-
-void _puts(char *s)
-{
-	while (*s != '\0')
+	if (str == NULL || str[0] == '\0')
+		return (0);
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(*s);
-		s++;
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 	}
-	_putchar('\n');
-}
-
-/**
- * print_number - prints an integer.
- *
- * @num: number to be printed.
- * Return: void
- */
-
-void print_number(unsigned int num)
-{
-	if ((num / 10) > 0)
-		print_number(num / 10);
-	_putchar((num % 10) + 48);
-
+	return (1);
 }
 
 /**
@@ -81,10 +36,18 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		_puts("Error ");
+		printf("Error\n");
 		exit(98);
 	}
-	print_number(_atoi(argv[1]) * _atoi(argv[2]));
-	_putchar('\n');
+	if (!is_number(argv[1]) || !is_number(argv[2]))
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	mul = num1 * num2;
+	printf("%u\n", mul);
 	return (0);
 }
