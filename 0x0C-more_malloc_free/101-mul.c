@@ -32,7 +32,7 @@ int is_number(char *str)
 
 int main(int argc, char *argv[])
 {
-	unsigned long long int num1, num2, mul;
+	int num1, num2, mul;
 
 	if (!is_number(argv[1]) || !is_number(argv[2]) || argc != 3)
 	{
@@ -43,6 +43,6 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 	mul = num1 * num2;
-	printf("%llu\n", mul);
+	printf("%d\n", mul);
 	return (0);
 }
