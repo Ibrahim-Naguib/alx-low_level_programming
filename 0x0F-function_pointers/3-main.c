@@ -13,6 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int (*op_func)(int, int), a, b;
+
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 	op_func = get_op_func(argv[2]);
 
 	if (!op_func)
-	{ 	
+	{
 		printf("Error\n");
 		exit(99);
 	}
@@ -33,6 +34,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n" , op_func(a, b));
+	printf("%d\n", op_func(a, b));
 	return (0);
 }
