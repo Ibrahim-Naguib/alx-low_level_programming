@@ -3,10 +3,9 @@
 #include <stdio.h>
 
 /**
- * print_numbers - Prints a variable number of integers separated by a specified character.
- * @separator: The character to separate the integers.
- * @n: The number of integers to print.
- * @...: The variable arguments list containing the integers.
+ * print_all - Prints a variable number of data types.
+ * @format: A string containing format specifiers.
+ * @...: The variable arguments list containing the data.
  *
  * Return: void
  */
