@@ -27,7 +27,7 @@ int _strlen(char *str)
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t bytes = 0, len = _strlen(text_content);
+	ssize_t bytes = 0, len; 
 
 	if (!filename)
 		return (-1);
@@ -36,7 +36,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (fd == -1)
 		return (-1);
-
+	len = _strlen(text_content);
 	if (len)
 		bytes = write(fd, text_content, len);
 
