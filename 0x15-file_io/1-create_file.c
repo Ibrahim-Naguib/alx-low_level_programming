@@ -1,14 +1,28 @@
 #include "main.h"
 
+/**
+ * _strlen - Computes the length of a string.
+ * @str: A pointer to the string.
+ *
+ * Return: The length of the string.
+ */
+
 int _strlen(char *str)
 {
 	int i = 0;
 
 	while (*str++)
 		i++;
-	return(i);
+	return (i);
 }
 
+/**
+ * create_file - Creates a new file and writes text content to it.
+ * @filename: The name of the file to create.
+ * @text_content: The content to write to the file.
+ *
+ * Return: 1 on success, -1 on failure.
+ */
 
 int create_file(const char *filename, char *text_content)
 {

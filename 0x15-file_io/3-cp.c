@@ -6,6 +6,14 @@
 #define ERR_NOCLOSE "Error: Can't close fd %d\n"
 #define PERMISSIONS 0664
 
+/**
+ * main - The entry point of the program.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings representing the command-line arguments.
+ *
+ * Return: The exit status of the program.
+ */
+
 int main(int argc, char **argv)
 {
 	int from_fd = 0, to_fd = 0;
@@ -23,11 +31,11 @@ int main(int argc, char **argv)
 	if (to_fd == -1)
 		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 
-	while ((bytes = read(from_fd, buff, BUFF_SIZE)) >0)
+	while ((bytes = read(from_fd, buff, BUFF_SIZE)) > 0)
 	{
 		if (write(to_fd, buff, bytes) != bytes)
 			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
-	}		
+	}
 	if (bytes == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 
@@ -36,9 +44,9 @@ int main(int argc, char **argv)
 
 	if (from_fd)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
-		
+
 	if (to_fd)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, to_fd), exit(100);
-		
-	return(EXIT_SUCCESS);
+
+	return (EXIT_SUCCESS);
 }
